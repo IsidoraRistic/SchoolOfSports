@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TreninziUPeriodu" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e1c16c0f-edb7-4c50-b3ec-5f32b408199d">
+	<parameter name="datumOd" class="java.util.Date"/>
+	<parameter name="datumDo" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="instruktor.ime" class="java.lang.String"/>
+	<field name="instruktor.prezime" class="java.lang.String"/>
+	<field name="datumOdrzavanja" class="java.util.Date"/>
+	<field name="teren.adresa" class="java.lang.String"/>
+	<field name="sportskadisciplina.naziv" class="java.lang.String"/>
+	<field name="grupa.nazivGrupe" class="java.lang.String"/>
+	<variable name="imeIPrezimeInstruktora" class="java.lang.String">
+		<variableExpression><![CDATA[$F{instruktor.ime}+" "+$F{instruktor.prezime}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="159" splitType="Stretch">
+			<staticText>
+				<reportElement x="50" y="30" width="500" height="40" forecolor="#660033" uuid="7d02fce9-d3af-40fb-909a-4d4e4ac0d8ad"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Serif" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Treninzi zakazani/odrzani u datom periodu]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-10" y="77" width="100" height="20" uuid="d9bb0a88-a136-4190-8bd1-cbe9f92ca663"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Datum od:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="90" y="77" width="100" height="20" uuid="fae75765-b10e-4e18-a2e5-27d2bbaf6b72"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{datumOd}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-10" y="97" width="100" height="18" uuid="224557d7-625b-4ac3-b7ac-2aa316e9896b"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Datum do:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="90" y="97" width="100" height="18" uuid="5b903c30-19f0-4814-989d-6291c6ba6462"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{datumDo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="129" width="30" height="30" backcolor="#FFB266" uuid="87c982b8-6ee5-463f-818f-eea5f4e3c445"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false" isItalic="false" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[RBR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="40" y="129" width="100" height="30" backcolor="#FFB266" uuid="8c458be0-11bf-442d-83ff-e0700d111e32"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false" isItalic="false" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Datum odrzavanja]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="140" y="129" width="100" height="30" backcolor="#FFB266" uuid="08c4b1ae-3fdc-4448-ad9c-b9fa120d3107"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false" isItalic="false" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Disciplina]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="240" y="129" width="100" height="30" backcolor="#FFB266" uuid="bd9bd2d8-edb0-4c5a-883a-766960993b3c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false" isItalic="false" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Teren]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="340" y="129" width="110" height="30" backcolor="#FFB266" uuid="1637e8cf-a532-4db3-baff-82d0fd88c153"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false" isItalic="false" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Grupa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="450" y="129" width="120" height="30" backcolor="#FFB266" uuid="b02b1f76-8326-4271-86d5-16c94fc40b00"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11" isBold="false" isItalic="false" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[Instruktor]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="450" y="0" width="120" height="30" uuid="326bd35a-fc10-472c-bcb0-a714185b35c0"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{imeIPrezimeInstruktora}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="0" width="100" height="30" uuid="e99e10f0-3bb1-4a5e-8930-ba4156b9188c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6fce76eb-16cf-487d-b46e-a3541c626fbc"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{datumOdrzavanja}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="0" width="100" height="30" uuid="f2ce8924-c366-453d-8651-4025648dfa29">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d6a1a9e2-20de-40b2-ba12-c350081c25ee"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{teren.adresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="0" width="110" height="30" uuid="838f4bcb-97dd-4ce0-b567-2d56a8b76e22">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3def30d7-84a7-45d6-92d2-e4c87798f1c6"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{grupa.nazivGrupe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="0" width="100" height="30" uuid="3f0b9462-912a-40e8-ac28-5cf49597de5e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9f6475e5-a386-4075-880a-1af644dbba40"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sportskadisciplina.naziv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="0" width="30" height="30" uuid="21a743c5-695a-4ed5-8153-3f4f0becf05e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Serif"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="55" splitType="Stretch"/>
+	</summary>
+</jasperReport>

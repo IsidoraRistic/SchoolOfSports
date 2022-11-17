@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="UceniciPoGrupama" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5fda20e4-e9bc-4ee3-af68-94859b5c47d3">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="imeSkole" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="ime" class="java.lang.String"/>
+	<field name="prezime" class="java.lang.String"/>
+	<field name="adresa" class="java.lang.String"/>
+	<field name="datumRodjenja" class="java.util.Date"/>
+	<field name="datumPrijave" class="java.util.Date"/>
+	<field name="grupa" class="model.Grupa"/>
+	<field name="grupa.nazivGrupe" class="java.lang.String"/>
+	<variable name="ukupnoUcenika" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{ime}]]></variableExpression>
+	</variable>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{grupa}]]></groupExpression>
+		<groupHeader>
+			<band height="73">
+				<staticText>
+					<reportElement mode="Opaque" x="30" y="43" width="100" height="30" forecolor="#000000" backcolor="#FFFF99" uuid="b43501fb-c606-44cb-8871-f71d6dc6f41b"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Yu Gothic UI Semibold" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ime]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="130" y="43" width="100" height="30" forecolor="#000000" backcolor="#FFFF99" uuid="e3a265e3-653b-42a5-97be-10336b0b7e16"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Yu Gothic UI Semibold" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Prezime]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="227" y="43" width="100" height="30" forecolor="#000000" backcolor="#FFFF99" uuid="1825ad1b-c315-4120-a088-cdd0b0480b7d"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Yu Gothic UI Semibold" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Adresa]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="327" y="43" width="100" height="30" forecolor="#000000" backcolor="#FFFF99" uuid="fe3bb0b6-6dc8-4999-a6de-4353a61f3c05"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Yu Gothic UI Semibold" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Datum rodjenja]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="427" y="43" width="100" height="30" forecolor="#000000" backcolor="#FFFF99" uuid="725480da-d203-435a-92e4-f58d94cb1c1d"/>
+					<box>
+						<topPen lineWidth="1.0"/>
+						<leftPen lineWidth="1.0"/>
+						<bottomPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.0"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Yu Gothic UI Semibold" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Datum prijave]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="38" y="15" width="72" height="24" uuid="09298b00-f2f6-4bed-a9f6-716ec8f7a089"/>
+					<textElement verticalAlignment="Middle"/>
+					<text><![CDATA[Grupa:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="110" y="10" width="100" height="30" uuid="52f5b73e-4688-4932-9873-d06b4c25a11b"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$F{grupa.nazivGrupe}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="40" width="230" height="30" forecolor="#FFA07A" uuid="c3cce7cb-3550-4e7c-a29d-20308ccf92ca"/>
+				<textElement textAlignment="Center">
+					<font fontName="Frank Ruhl Hofshi" size="18"/>
+				</textElement>
+				<text><![CDATA[Spisak ucenika skole ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-1" y="0" width="161" height="30" uuid="09cdff1a-5491-495d-8b7a-07efd56205a2"/>
+				<textFieldExpression><![CDATA[$P{imeSkole}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="0" width="100" height="30" uuid="b897f7ef-fa62-4813-8a09-f11560a9146f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{ime}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="0" width="97" height="30" uuid="ee1fde4f-d4ac-43c9-be3d-8b10338e5e73"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{prezime}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="0" width="100" height="30" uuid="bf14fb68-4dc8-48b2-8b3b-c5a1ebb37c7c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{adresa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="327" y="0" width="100" height="30" uuid="c2add78e-0e2c-4ab9-9862-02d1eb09573c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{datumRodjenja}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="427" y="0" width="100" height="30" uuid="2ba9180b-ff7f-4b4a-975f-7513018d79b2"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none"/>
+				<textFieldExpression><![CDATA[$F{datumPrijave}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="67" splitType="Stretch">
+			<textField>
+				<reportElement x="460" y="37" width="100" height="30" uuid="146d4e45-74ca-4266-a71a-b795d3ef77fc"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="100" y="10" width="100" height="30" uuid="929ad364-2dfa-4d8b-8624-c53d9daeba49"/>
+				<textFieldExpression><![CDATA[$V{ukupnoUcenika}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-1" y="10" width="100" height="30" uuid="22d40f1e-e396-493c-b4f8-0967481af6ef"/>
+				<text><![CDATA[Ukupno ucenika:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
